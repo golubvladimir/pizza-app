@@ -1,0 +1,16 @@
+.product-list {
+
+  &__title {
+    width: 100%;
+  }
+
+  &__items {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &__item {
+    width: calc(100%/4 - 30px);
+    margin: 15px;
+  }
+}
