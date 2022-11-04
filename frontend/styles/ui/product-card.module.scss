@@ -1,0 +1,31 @@
+.product-card {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+
+  &__img {
+    width: 100%;
+    height: auto;
+  }
+
+  &__title {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  &__description {
+    font-size: 14px;
+    width: 100%;
+    color: #70544f;
+    margin-bottom: 10px;
+  }
+
+  &__price {
+    width: 50%;
+    font-weight: 500;
+  }
+
+  &__btn {
+    margin-left: auto;
+  }
+}
