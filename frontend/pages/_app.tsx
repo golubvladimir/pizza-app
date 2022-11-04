@@ -1,6 +1,12 @@
 import '../styles/globals.css'
 import type { AppProps } from 'next/app'
 
+import PZLayout from "../components/layouts/main/PZLayout";
+
 export default function App({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />
+  return (
+    <PZLayout {...pageProps}>
+      <Component {...pageProps} />
+    </PZLayout>
+  )
 }
