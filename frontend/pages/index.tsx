@@ -2,8 +2,8 @@ import classes from '../styles/pages/main.module.scss'
 import PZProductList from "../components/sections/PZProductList";
 import PZContainer from "../components/ui/PZContainer";
 import {IPZProductCard} from "../components/ui/PZProductCard";
-import {IPZCategoryCard} from "../components/ui/PZCategoryCard";
 import PZCategoryList from "../components/sections/PZCategoryList";
+import {IPZCategoryCard} from "../components/ui/PZCategoryCard";
 
 const Main = () => {
 
