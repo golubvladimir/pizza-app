@@ -24,7 +24,7 @@ const PZCategoryList = ({ title, items, className }: IPZCategoryList) => {
         { items.map(item => (
           <PZLink
             className={ classes['category-list__item'] }
-            href={ `/categories/${ item['slug'] }` }
+            href={ `/${ item['slug'] }` }
           >
             <PZCategoryCard
               title={ item['title'] }
