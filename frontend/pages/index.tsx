@@ -2,10 +2,12 @@ import classes from '../styles/pages/main.module.scss'
 import PZProductList from "../components/sections/PZProductList";
 import PZContainer from "../components/ui/PZContainer";
 import {IPZProductCard} from "../components/ui/PZProductCard";
+import {IPZCategoryCard} from "../components/ui/PZCategoryCard";
+import PZCategoryList from "../components/sections/PZCategoryList";
 
 const Main = () => {
 
-  const list: IPZProductCard[] = [
+  const products: IPZProductCard[] = [
     {
       id: 1,
       img: '/pizza.png',
@@ -89,7 +91,26 @@ const Main = () => {
       title: 'Pizza item',
       description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit iusto reprehenderit unde. Alias dignissimos ducimus explicabo facilis ipsam necessitatibus, perferendis porro quibusdam. Consequuntur ea enim magnam praesentium quaerat, quo quod.',
       price: 222
+    }
+  ]
+
+  const categories: Array<IPZCategoryCard> = [
+    {
+      title: 'Pizzas',
+      slug: 'pizzas'
     },
+    {
+      title: 'Drinks',
+      slug: 'drinks'
+    },
+    {
+      title: 'Snacks',
+      slug: 'snacks'
+    },
+    {
+      title: 'Sauces',
+      slug: 'sauces'
+    }
   ]
 
   return (
@@ -98,9 +119,13 @@ const Main = () => {
         className={ classes['main-page__container'] }
         size={'l'}
       >
+        <PZCategoryList
+          className={ classes['main-page__categories'] }
+          items={categories}
+        />
         <PZProductList
-          className={ classes.mainPage__productList }
-          items={list}
+          className={ classes['main-page__products'] }
+          items={products}
         />
       </PZContainer>
     </div>
