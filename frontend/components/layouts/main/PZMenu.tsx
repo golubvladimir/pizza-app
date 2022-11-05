@@ -22,6 +22,11 @@ const PZMenu = ({ className }: IPZMenu) => {
       title: 'Drinks',
       href: '/drinks'
     },
+    {
+      id: 4,
+      title: 'Sauces',
+      href: '/sauces'
+    }
   ]
 
   return (

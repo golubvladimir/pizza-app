@@ -16,7 +16,7 @@ const PZProductList = ({ title, items, className }: IPZProductList) => {
           className={classes['product-list__title']}
           size={'m'}
         >
-          {title}
+          { title }
         </PZTitle>
         : ''
       }
