@@ -1,0 +1,17 @@
+.container {
+  margin: 0 auto;
+
+  &--size {
+    &-l {
+      width: 1300px;
+    }
+
+    &-m {
+      width: 900px;
+    }
+
+    &-s {
+      width: 700px;
+    }
+  }
+}

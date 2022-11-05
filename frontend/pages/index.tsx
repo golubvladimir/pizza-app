@@ -1,71 +1,135 @@
-import Head from 'next/head'
-import Image from 'next/image'
-import styles from '../styles/Home.module.css'
+import classes from '../styles/pages/main.module.scss'
+import PZProductList from "../components/sections/PZProductList";
+import PZContainer from "../components/ui/PZContainer";
+import {IPZProductCard} from "../components/ui/PZProductCard";
+import {IPZCategoryCard} from "../components/ui/PZCategoryCard";
+import PZCategoryList from "../components/sections/PZCategoryList";
 
-export default function Home() {
+const Main = () => {
+
+  const products: IPZProductCard[] = [
+    {
+      id: 1,
+      img: '/pizza.png',
+      title: 'Pizza item',
+      description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit iusto reprehenderit unde. Alias dignissimos ducimus explicabo facilis ipsam necessitatibus, perferendis porro quibusdam. Consequuntur ea enim magnam praesentium quaerat, quo quod.',
+      price: 222
+    },
+    {
+      id: 2,
+      img: '/pizza.png',
+      title: 'Pizza item',
+      description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit iusto reprehenderit unde. Alias dignissimos ducimus explicabo facilis ipsam necessitatibus, perferendis porro quibusdam. Consequuntur ea enim magnam praesentium quaerat, quo quod.',
+      price: 222
+    },
+    {
+      id: 3,
+      img: '/pizza.png',
+      title: 'Pizza item',
+      description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit iusto reprehenderit unde. Alias dignissimos ducimus explicabo facilis ipsam necessitatibus, perferendis porro quibusdam. Consequuntur ea enim magnam praesentium quaerat, quo quod.',
+      price: 222
+    },
+    {
+      id: 4,
+      img: '/pizza.png',
+      title: 'Pizza item',
+      description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit iusto reprehenderit unde. Alias dignissimos ducimus explicabo facilis ipsam necessitatibus, perferendis porro quibusdam. Consequuntur ea enim magnam praesentium quaerat, quo quod.',
+      price: 222
+    },
+    {
+      id: 5,
+      img: '/pizza.png',
+      title: 'Pizza item',
+      description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit iusto reprehenderit unde. Alias dignissimos ducimus explicabo facilis ipsam necessitatibus, perferendis porro quibusdam. Consequuntur ea enim magnam praesentium quaerat, quo quod.',
+      price: 222
+    },
+    {
+      id: 6,
+      img: '/pizza.png',
+      title: 'Pizza item',
+      description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit iusto reprehenderit unde. Alias dignissimos ducimus explicabo facilis ipsam necessitatibus, perferendis porro quibusdam. Consequuntur ea enim magnam praesentium quaerat, quo quod.',
+      price: 222
+    },
+    {
+      id: 7,
+      img: '/pizza.png',
+      title: 'Pizza item',
+      description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit iusto reprehenderit unde. Alias dignissimos ducimus explicabo facilis ipsam necessitatibus, perferendis porro quibusdam. Consequuntur ea enim magnam praesentium quaerat, quo quod.',
+      price: 222
+    },
+    {
+      id: 8,
+      img: '/pizza.png',
+      title: 'Pizza item',
+      description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit iusto reprehenderit unde. Alias dignissimos ducimus explicabo facilis ipsam necessitatibus, perferendis porro quibusdam. Consequuntur ea enim magnam praesentium quaerat, quo quod.',
+      price: 222
+    },
+    {
+      id: 9,
+      img: '/pizza.png',
+      title: 'Pizza item',
+      description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit iusto reprehenderit unde. Alias dignissimos ducimus explicabo facilis ipsam necessitatibus, perferendis porro quibusdam. Consequuntur ea enim magnam praesentium quaerat, quo quod.',
+      price: 222
+    },
+    {
+      id: 10,
+      img: '/pizza.png',
+      title: 'Pizza item',
+      description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit iusto reprehenderit unde. Alias dignissimos ducimus explicabo facilis ipsam necessitatibus, perferendis porro quibusdam. Consequuntur ea enim magnam praesentium quaerat, quo quod.',
+      price: 222
+    },
+    {
+      id: 11,
+      img: '/pizza.png',
+      title: 'Pizza item',
+      description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit iusto reprehenderit unde. Alias dignissimos ducimus explicabo facilis ipsam necessitatibus, perferendis porro quibusdam. Consequuntur ea enim magnam praesentium quaerat, quo quod.',
+      price: 222
+    },
+    {
+      id: 12,
+      img: '/pizza.png',
+      title: 'Pizza item',
+      description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit iusto reprehenderit unde. Alias dignissimos ducimus explicabo facilis ipsam necessitatibus, perferendis porro quibusdam. Consequuntur ea enim magnam praesentium quaerat, quo quod.',
+      price: 222
+    }
+  ]
+
+  const categories: Array<IPZCategoryCard> = [
+    {
+      title: 'Pizzas',
+      slug: 'pizzas'
+    },
+    {
+      title: 'Drinks',
+      slug: 'drinks'
+    },
+    {
+      title: 'Snacks',
+      slug: 'snacks'
+    },
+    {
+      title: 'Sauces',
+      slug: 'sauces'
+    }
+  ]
+
   return (
-    <div className={styles.container}>
-      <Head>
-        <title>Create Next App</title>
-        <meta name="description" content="Generated by create next app" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-
-      <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
-
-        <p className={styles.description}>
-          Get started by editing{' '}
-          <code className={styles.code}>pages/index.tsx</code>
-        </p>
-
-        <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
-            <h2>Documentation &rarr;</h2>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
-
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h2>Learn &rarr;</h2>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/canary/examples"
-            className={styles.card}
-          >
-            <h2>Examples &rarr;</h2>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
-
-          <a
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.card}
-          >
-            <h2>Deploy &rarr;</h2>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
-        </div>
-      </main>
-
-      <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <span className={styles.logo}>
-            <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
-          </span>
-        </a>
-      </footer>
+    <div className={ classes.mainPage }>
+      <PZContainer
+        className={ classes['main-page__container'] }
+        size={'l'}
+      >
+        <PZCategoryList
+          className={ classes['main-page__categories'] }
+          items={categories}
+        />
+        <PZProductList
+          className={ classes['main-page__products'] }
+          items={products}
+        />
+      </PZContainer>
     </div>
   )
 }
+
+export default Main;
