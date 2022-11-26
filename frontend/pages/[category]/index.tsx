@@ -1,12 +1,11 @@
-import classes from '../styles/pages/main.module.scss'
-import PZProductList from "../components/sections/PZProductList";
-import PZContainer from "../components/ui/PZContainer";
-import {IPZProductCard} from "../components/ui/PZProductCard";
-import PZCategoryList from "../components/sections/PZCategoryList";
-import {IPZCategoryCard} from "../components/ui/PZCategoryCard";
+import classes from '../../styles/pages/category.module.scss';
+import PZTitle from "../../components/ui/PZTitle";
+import PZProductList from "../../components/sections/PZProductList";
+import {IPZCategoryCard} from "../../components/ui/PZCategoryCard";
+import {IPZProductCard} from "../../components/ui/PZProductCard";
+import PZContainer from "../../components/ui/PZContainer";
 
-const Main = () => {
-
+const Category = () => {
   const products: IPZProductCard[] = [
     {
       id: 1,
@@ -92,44 +91,28 @@ const Main = () => {
       description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit iusto reprehenderit unde. Alias dignissimos ducimus explicabo facilis ipsam necessitatibus, perferendis porro quibusdam. Consequuntur ea enim magnam praesentium quaerat, quo quod.',
       price: 222
     }
-  ]
-
-  const categories: Array<IPZCategoryCard> = [
-    {
-      title: 'Pizzas',
-      slug: 'pizzas'
-    },
-    {
-      title: 'Drinks',
-      slug: 'drinks'
-    },
-    {
-      title: 'Snacks',
-      slug: 'snacks'
-    },
-    {
-      title: 'Sauces',
-      slug: 'sauces'
-    }
-  ]
+  ];
 
   return (
-    <div className={ classes.mainPage }>
+    <div className={ classes['category-page'] }>
       <PZContainer
-        className={ classes['main-page__container'] }
+        className={ classes['category-page__container'] }
         size={'l'}
       >
-        <PZCategoryList
-          className={ classes['main-page__categories'] }
-          items={categories}
-        />
+        <PZTitle
+          className={ classes['category-page__title'] }
+          size={'l'}
+        >
+          Category name
+        </PZTitle>
         <PZProductList
-          className={ classes['main-page__products'] }
-          items={products}
+          className={ classes['category-page__products'] }
+          items={ products }
         />
       </PZContainer>
     </div>
   )
 }
 
-export default Main;
+export default Category;
+ 
