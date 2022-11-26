@@ -1,0 +1,29 @@
+import { Column, Entity, JoinColumn, ManyToOne, PrimaryGeneratedColumn } from 'typeorm';
+import { CategoryEntity } from '../../categories/entities/category.entity';
+
+@Entity({
+  name: 'product'
+})
+export class ProductEntity {
+
+  @PrimaryGeneratedColumn({
+    name: 'id'
+  })
+  id: string;
+
+  @Column({
+    name: 'title'
+  })
+  title: string;
+
+  @Column({
+    name: 'description'
+  })
+  description: string;
+
+  @ManyToOne(() => CategoryEntity, (category) => category.products)
+  @JoinColumn({
+    name: 'category_id'
+  })
+  category: CategoryEntity
+}
