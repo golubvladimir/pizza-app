@@ -12,9 +12,9 @@ export class CategoryEntity {
   id: string;
 
   @Column({
-    name: 'name'
+    name: 'title'
   })
-  name: string;
+  title: string;
 
   @Column({
     name: 'description'
