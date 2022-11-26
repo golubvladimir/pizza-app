@@ -8,7 +8,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
      * @nestjs/config config
      */
     ConfigModule.forRoot({
-      envFilePath: `${ process.cwd() }/.development.env`,
+      envFilePath: `${ process.cwd() }/config/.development.env`,
     }),
 
     /**
