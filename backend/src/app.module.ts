@@ -8,7 +8,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
      * @nestjs/config config
      */
     ConfigModule.forRoot({
-      envFilePath: `${ process.cwd() }/.development.env`,
+      envFilePath: `${ process.cwd() }/config/.development.env`,
     }),
 
     /**
@@ -24,7 +24,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
         password: configService.get('DATABASE_PASSWORD'),
         database: configService.get('DATABASE_NAME'),
         entities: [
-          `${ __dirname }/**/*.entity.{js|ts}`
+          `${ __dirname }/**/*.entity.js`
         ],
         synchronize: true,
       }),
