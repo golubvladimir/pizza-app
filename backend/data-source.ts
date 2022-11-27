@@ -10,6 +10,7 @@ const options: DataSourceOptions & SeederOptions = {
   host: 'localhost',
   password: 'root',
   username: 'root',
+  entities: [`${ process.cwd() }/src/**/*.entity{.js,.ts}`],
   seeds: [`${ process.cwd() }/src/database/seeds/**/*{.js,.ts}`],
   factories: [`${ process.cwd() }/src/database/factories/**/*{.js,.ts}`]
 };
