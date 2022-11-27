@@ -21,7 +21,14 @@ export class ProductEntity {
   })
   description: string;
 
-  @ManyToOne(() => CategoryEntity, (category) => category.products)
+  @ManyToOne(
+    () => CategoryEntity,
+    (category) => category.products,
+    {
+      nullable: true,
+      cascade: true
+    }
+  )
   @JoinColumn({
     name: 'category_id'
   })

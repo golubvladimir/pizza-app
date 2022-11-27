@@ -21,6 +21,9 @@ export class CategoryEntity {
   })
   description: string;
 
-  @OneToMany(() => ProductEntity, (product) => product.category)
+  @OneToMany(
+    () => ProductEntity,
+    (product) => product.category
+  )
   products: ProductEntity[]
 }
