@@ -7,6 +7,8 @@ export default class CategorySeeder implements Seeder {
     dataSource: DataSource,
     factoryManager: SeederFactoryManager
   ): Promise<any> {
+    console.log('category seed');
+
     const categoryFactory = await factoryManager.get(CategoryEntity);
     await categoryFactory.save();
   }
