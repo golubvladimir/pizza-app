@@ -2,7 +2,7 @@ import { Column, Entity, JoinColumn, ManyToOne, PrimaryGeneratedColumn } from 't
 import { CategoryEntity } from '../../categories/entities/category.entity';
 
 @Entity({
-  name: 'product'
+  name: 'products'
 })
 export class ProductEntity {
 
@@ -21,7 +21,14 @@ export class ProductEntity {
   })
   description: string;
 
-  @ManyToOne(() => CategoryEntity, (category) => category.products)
+  @ManyToOne(
+    () => CategoryEntity,
+    (category) => category.products,
+    {
+      nullable: true,
+      cascade: true
+    }
+  )
   @JoinColumn({
     name: 'category_id'
   })

@@ -12,7 +12,7 @@ export class CategoriesService {
   getByName(name: string) {
     return this.categoryRepository.findOne({
       where: {
-        name: name
+        title: name
       }
     });
   }
