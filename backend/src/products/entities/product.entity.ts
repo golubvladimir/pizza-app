@@ -2,7 +2,7 @@ import { Column, Entity, JoinColumn, ManyToOne, PrimaryGeneratedColumn } from 't
 import { CategoryEntity } from '../../categories/entities/category.entity';
 
 @Entity({
-  name: 'product'
+  name: 'products'
 })
 export class ProductEntity {
 

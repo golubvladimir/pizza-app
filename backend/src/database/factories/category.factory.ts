@@ -4,10 +4,10 @@ import { CategoryEntity } from '../../categories/entities/category.entity';
 export default setSeederFactory(CategoryEntity, async (faker) => {
   console.log('category_factory');
 
-  const product = new CategoryEntity();
+  const category = new CategoryEntity();
 
-  product.title = faker.commerce.productName();
-  product.description = faker.commerce.productDescription();
+  category.title = faker.commerce.productName();
+  category.description = faker.commerce.productDescription();
 
-  return product;
+  return category;
 })
