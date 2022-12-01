@@ -1,5 +1,6 @@
-import { Column, Entity, JoinColumn, ManyToOne, PrimaryGeneratedColumn } from 'typeorm';
+import { Column, Entity, JoinColumn, JoinTable, ManyToMany, ManyToOne, PrimaryGeneratedColumn } from 'typeorm';
 import { CategoryEntity } from '../../categories/entities/category.entity';
+import { OrderEntity } from '../../orders/entities/order.entity';
 
 @Entity({
   name: 'products'
@@ -32,5 +33,24 @@ export class ProductEntity {
   @JoinColumn({
     name: 'category_id'
   })
-  category: CategoryEntity
+  category: CategoryEntity;
+
+  @ManyToMany(
+    () => OrderEntity,
+    (order) => order.products,
+    {
+      nullable: true,
+      cascade: true
+    }
+  )
+  @JoinTable({
+    name: 'orders_with_products',
+    joinColumn: {
+      name: 'product_id'
+    },
+    inverseJoinColumn: {
+      name: 'order_id'
+    }
+  })
+  orders: OrderEntity[]
 }
