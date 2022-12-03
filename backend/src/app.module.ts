@@ -1,6 +1,9 @@
 import { Module } from '@nestjs/common';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
+import { AuthModule } from './auth/auth.module';
+import { UsersModule } from './users/users.module';
+import { JwtModule } from '@nestjs/jwt';
 
 @Module({
   imports: [
@@ -16,6 +19,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
      */
     TypeOrmModule.forRootAsync({
       imports: [ConfigModule],
+      inject: [ConfigService],
       useFactory: (configService: ConfigService) => ({
         type: 'mysql',
         host: configService.get('DATABASE_HOST'),
@@ -27,9 +31,11 @@ import { TypeOrmModule } from '@nestjs/typeorm';
           `${ __dirname }/**/*.entity.js`
         ],
         synchronize: true,
-      }),
-      inject: [ConfigService],
-    })
+      })
+    }),
+
+    AuthModule,
+    UsersModule
   ],
 })
 export class AppModule {}
