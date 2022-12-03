@@ -7,7 +7,7 @@ export default class ProductSeeder implements Seeder {
     dataSource: DataSource,
     factoryManager: SeederFactoryManager
   ): Promise<any> {
-    console.log('user seed');
+    console.log('user_seed');
 
     const userFactory = await factoryManager.get(UserEntity);
     await userFactory.save();
