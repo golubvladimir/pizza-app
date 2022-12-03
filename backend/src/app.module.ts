@@ -12,6 +12,7 @@ import { JwtModule } from '@nestjs/jwt';
      */
     ConfigModule.forRoot({
       envFilePath: `${ process.cwd() }/config/.development.env`,
+      isGlobal: true
     }),
 
     /**
