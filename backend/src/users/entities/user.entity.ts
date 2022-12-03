@@ -1,7 +1,6 @@
 import { BeforeInsert, Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
 import { genSalt, hash } from 'bcrypt';
 
-
 @Entity({
   name: 'users'
 })
